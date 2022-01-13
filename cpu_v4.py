@@ -259,10 +259,10 @@ class cpuModule(Module):
         # Immidiate Value calculations     
         self.comb+=[
            imm_i.eq(Cat(instruction[20:32],Replicate(instruction[31],20))),
-           imm_b.eq(Cat(0,instruction[8:12],instruction[25:31],instruction[7],instruction[31])),
+           imm_b.eq(Cat(0,instruction[8:12],instruction[25:31],instruction[7],Replicate(instruction[31],20))),
            imm_s.eq(Cat(instruction[7:12],instruction[25:32],Replicate(instruction[31],20))),
            imm_u.eq(Cat(Replicate(0,12),instruction[12:32])),
-           imm_j.eq(Cat(0,instruction[21:31],instruction[20],instruction[12:20],instruction[31]))
+           imm_j.eq(Cat(0,instruction[21:31],instruction[20],instruction[12:20],Replicate(instruction[31],12)))
         ]
   
 
