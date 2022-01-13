@@ -1,0 +1,8 @@
+To complie the code I had to use
+
+export PATH="$HOME/enjoy-digital/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin:$PATH"
+export PATH="$HOME/gowin/Programmer/bin:$HOME/gowin/IDE/bin:$PATH"
+
+riscv64-unknown-elf-gcc blinky.S  -march=rv32i -mabi=ilp32 -ggdb -O0 -o blinky -ffreestanding -nostdlib
+riscv64-unknown-elf-objcopy -O binary blinky blinky.bin
+python3 makehex.py blinky.bin 2048 > blinky.hex
