@@ -5,12 +5,11 @@
 * Useful as smoke test to see that serv is running correctly
 */
 
-
 .globl _start
 _start:
 
-	lui t1,%hi(100000000) #delay value
-        addi t1,t1,%lo(100000000)
+	lui t1,0 #delay value
+        addi t1,t1,3
         addi t0,zero,0xAA
         add x31, t0, x0
 
@@ -23,4 +22,3 @@ time1:
 	addi t2, t2, 1
 	bne t1, t2, time1
 	jal x0,bl1
-

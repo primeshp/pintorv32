@@ -5,7 +5,7 @@ from migen.genlib.cdc import MultiReg
 
 from litex.build.generic_platform import *
 from litex.build.xilinx import XilinxPlatform
-from cpu_v3 import cpuModule
+from cpu_v4 import cpuModule
 
 
 
